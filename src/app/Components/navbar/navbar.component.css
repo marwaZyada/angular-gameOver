@@ -1,0 +1,36 @@
+.navbar{
+    z-index: 999;
+}
+.bg{
+    background-color: var(--main-color);
+}
+
+.border-blue{
+    border: 1px solid var(--blue);
+    border-radius: 4.5px;
+    -webkit-border-radius: 4.5px;
+    -moz-border-radius: 4.5px;
+    -ms-border-radius: 4.5px;
+    -o-border-radius: 4.5px;
+}
+
+.text-blue{
+    color: var(--blue)!important;
+}
+.text-gray{
+      color: var(--text-color)!important;
+}
+
+@media screen and (max-width:990px){
+   .navbar{
+    justify-content: start!important;
+    
+   }
+   ul{
+    align-items: start!important;
+   }
+   .social{
+    margin-left: unset!important;
+    
+   }
+}

@@ -1,0 +1,40 @@
+
+.bg{
+    background-color: var(--gray);
+}
+
+.text-color{
+    color: var(--text-color);
+}
+input,p{
+    margin-top: 15px;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+.text-blue{
+    color:var(--blue)
+}
+.input-bg{
+    background-color: var(--black);
+    border-color: var(--gray);
+}
+.input-bg-green{
+    background-color: var(--light-green);
+}
+.border-gray{
+    border-color:rgb(39, 37, 37);
+}
+
+.modal-header,.modal-body,.modal-footer{
+    border: none;
+    padding: 5px;
+}
+
+
+@media screen and (max-width:990px){
+    .image{
+        display: none;
+        
+    }
+}

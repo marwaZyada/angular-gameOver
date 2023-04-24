@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-lg navbar-dark py-3  text-capitalize shadow position-fixed w-100 bg">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="./assets/logo.png" width="50" alt=""><span class="fw-bold "> game over </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="home" routerLinkActive="active">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="all" routerLinkActive="active">all</a>
+          </li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" routerLink="platforms" routerLinkActive="active" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             platforms
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/platforms/pc" routerLinkActive="active">pc</a></li>
+              <li><a class="dropdown-item" routerLink="/platforms/browser" routerLinkActive="active">browser</a></li>
+            
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" routerLink="sort-by" routerLinkActive="active" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             sort-by
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="sort-by/release" routerLinkActive="active">release-date</a></li>
+              <li><a class="dropdown-item" routerLink="sort-by/popularity" routerLinkActive="active">popularity</a></li>
+              <li><a class="dropdown-item" routerLink="sort-by/alphabetical" routerLinkActive="active">alphabetical</a></li>
+              <li><a class="dropdown-item" routerLink="sort-by/relevance" routerLinkActive="active">relevance</a></li>
+            
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" routerLink="categories" routerLinkActive="active" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            categories
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="categories/racing" routerLinkActive="active">racing</a></li>
+              <li><a class="dropdown-item" routerLink="categories/sports" routerLinkActive="active">sports</a></li>
+              <li><a class="dropdown-item" routerLink="categories/social" routerLinkActive="active">social</a></li>
+              <li><a class="dropdown-item" routerLink="categories/shooter" routerLinkActive="active">shooter</a></li>
+              <li><a class="dropdown-item" routerLink="categories/zombie" routerLinkActive="active">zombie</a></li>
+              <li><a class="dropdown-item" routerLink="categories/fantasy" routerLinkActive="active">fantacy</a></li>
+              <li><a class="dropdown-item" routerLink="categories/action-rpg" routerLinkActive="active">action-rpg</a></li>
+              <li><a class="dropdown-item" routerLink="categories/action" routerLinkActive="active">action</a></li>
+              <li><a class="dropdown-item" routerLink="categories/flight" routerLinkActive="active">flight</a></li>
+              <li><a class="dropdown-item" routerLink="categories/bottle-royale" routerLinkActive="active">battle-royale</a></li>
+            
+            </ul>
+          </li>
+          <ul class="navbar-nav align-items-center gap-3 ms-auto social">
+            <li class="nav-item"><a routerLink="login" routerLinkActive="active" class="text-gray">login</a></li>
+            <li class="nav-item border-blue px-2 py-1 text-blue"><a routerLink="register" routerLinkActive="active">join free</a></li>
+            <li class="nav-item border-blue px-2 py-1 text-blue"><a href="">log out</a></li>
+          </ul>
+        </ul>
+      </div>
+    </div>
+  </nav>

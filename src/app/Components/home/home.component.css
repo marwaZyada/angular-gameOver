@@ -1,0 +1,18 @@
+.bg{
+    height:45vh;
+    background-image: url("../../../assets/paladins.b44d33d6e7ee1ba8.png");
+    background-size: cover;
+    /* background-color: black; */
+    /* background-blend-mode:overlay */
+    
+}
+.overlay{
+    background-color: rgba(0, 0, 0, .4);
+}  
+
+.text-blue{
+    color: #1F99DE;
+}
+.text-gray{
+    color:var(--text-color)
+}

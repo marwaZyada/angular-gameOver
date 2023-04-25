@@ -4,7 +4,7 @@
         <div class="text-center py-5 text-capitalize">
 <h2>Find & track the best <span class="text-blue">free-to-play</span>  games!</h2>
 <p class="text-muted">Track what you've played and search for what to play next! Plus get free premium loot!</p>
-<button class="btn btn-outline-secondary text-capitalize">browser games</button>
+<button class="btn btn-outline-secondary text-capitalize" routerLink="/all">browser games</button>
         </div>
     </div>
     </div>
@@ -16,6 +16,16 @@
     <h2 class="text-gray"><i class="fa-solid fa-robot"></i>Personalized Recommendations</h2>
 
     <div class="row mt-4">
-        <div class="col-md-4"></div>
+        <div class="col-md-4 mb-3 col-sm-12 cursor-pointer game " *ngFor="let game of games " [routerLink]="['/details',game.id]">
+            <div class="bg-secondary h-100 ">
+            <div>
+                <img [src]="game.thumbnail"class="ratio ratio-4x3 w-100" alt="">
+            </div>
+            <div class="content d-flex justify-content-between align-items-center  p-3">
+                <h3 class="h6 text-gray">{{game.title}}</h3>
+                <div class="btn btn-primary">free</div>
+            </div>
+        </div>
+        </div>
     </div>
 </div>

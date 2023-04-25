@@ -1,0 +1,7 @@
+.owl{
+    height: 450px;
+    background-color: red;
+}
+.text-gray{
+    color: var(--text-color)
+}

@@ -7,16 +7,16 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100">
+        <ul class="navbar-nav  mb-2 mb-lg-0 " *ngIf="_gameService.token">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="home" routerLinkActive="active">Home</a>
+            <a class="nav-link  " aria-current="page" routerLink="home" routerLinkActive="active">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="all" routerLinkActive="active">all</a>
           </li>
           
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" routerLink="platforms" routerLinkActive="active" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle"   role="button" data-bs-toggle="dropdown" aria-expanded="false">
              platforms
             </a>
             <ul class="dropdown-menu">
@@ -26,11 +26,11 @@
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" routerLink="sort-by" routerLinkActive="active" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
              sort-by
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" routerLink="sort-by/release" routerLinkActive="active">release-date</a></li>
+              <li><a class="dropdown-item" routerLink="sort-by/release_date" routerLinkActive="active">release_date</a></li>
               <li><a class="dropdown-item" routerLink="sort-by/popularity" routerLinkActive="active">popularity</a></li>
               <li><a class="dropdown-item" routerLink="sort-by/alphabetical" routerLinkActive="active">alphabetical</a></li>
               <li><a class="dropdown-item" routerLink="sort-by/relevance" routerLinkActive="active">relevance</a></li>
@@ -38,7 +38,7 @@
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" routerLink="categories" routerLinkActive="active" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
             categories
             </a>
             <ul class="dropdown-menu">
@@ -55,11 +55,12 @@
             
             </ul>
           </li>
+        </ul>
+
           <ul class="navbar-nav align-items-center gap-3 ms-auto social">
-            <li class="nav-item"><a routerLink="login" routerLinkActive="active" class="text-gray">login</a></li>
-            <li class="nav-item border-blue px-2 py-1 text-blue"><a routerLink="register" routerLinkActive="active">join free</a></li>
-            <li class="nav-item border-blue px-2 py-1 text-blue"><a href="">log out</a></li>
-          </ul>
+            <li class="nav-item active"*ngIf="!_gameService.token"><a  class="nav-link " routerLink="login" routerLinkActive="active" class="text-gray">login</a></li>
+            <li class="nav-item border-blue px-2 py-1 text-blue"*ngIf="!_gameService.token"><a class="nav-link"  routerLink="register" routerLinkActive="active">join free</a></li>
+            <li class="nav-item border-blue px-3 text-blue out"*ngIf="_gameService.token" (click)="_gameService.logout()"><a class="nav-link"  href="">log out</a></li>
         </ul>
       </div>
     </div>

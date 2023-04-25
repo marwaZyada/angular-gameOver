@@ -1,19 +1,47 @@
 <div class="container">
 <div class="row mt-5 py-3">
-    <div class="col-lg-6 p-0">
+    <div class="col-lg-6 p-0 image">
         <img src="../../../assets/gaming.ebaf.jpg" class="w-100 h-100" alt="">
     </div>
-    <div class="col-lg-6 text-capitalize text-center py-5 px-3 text-color bg image">
+    <div class="col-lg-6 text-capitalize text-center py-5 px-3 text-color bg ">
         <h2 class="fs-3">create my account</h2>
+        <form  [formGroup]="registerForm" (ngSubmit)="register(registerForm)">
+            
         <div class="d-flex justify-content-center gap-2 ">
-            <input type="text" placeholder="first name" class="form-control input-bg text-capitalize">
-            <input type="text" placeholder="last name" class="form-control input-bg text-capitalize">
+            <input type="text" placeholder="first name" class="form-control input-bg text-capitalize" formControlName="first_name"/>
+            <input type="text" placeholder="last name" class="form-control input-bg text-capitalize" formControlName="last_name"/>
         </div>
-        <input type="email" placeholder="email address" class="form-control input-bg-green text-capitalize">
-        <input type="number" placeholder="age" class="form-control input-bg text-capitalize">
-        <input type="password" placeholder="password" class="form-control input-bg-green text-capitalize">
-        <input type="submit" value="create account" class="form-control bg text-capitalize text-light border-gray ">
-        <p class="text-start small ">This site is protected by reCAPTCHA and the Google <span class="text-decoration-underline">Privacy Policy</span> and <span class="text-decoration-underline">Terms of Service</span> apply.</p>
+        <div *ngIf="registerForm.get('first_name')?.touched && registerForm.get('first_name')?.invalid">
+            <p class="alert alert-danger" *ngIf="registerForm.get('first_name')?.getError('required')" >required</p>
+            <p class="alert alert-danger" *ngIf="registerForm.get('first_name')?.getError('minlength')" >must be 3 letters minimum length</p>
+        </div>
+        <div *ngIf="registerForm.get('last_name')?.touched && registerForm.get('last_name')?.invalid">
+            <p class="alert alert-danger" *ngIf="registerForm.get('last_name')?.getError('required')" >required</p>
+            <p class="alert alert-danger" *ngIf="registerForm.get('last_name')?.getError('minlength')" >must be 3 letters minimum length</p>
+        </div>
+
+        <input type="email" placeholder="email address" class="form-control input-bg-green text-capitalize" formControlName="email">
+         <div *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid">
+                <p class="alert alert-danger" *ngIf="registerForm.get('email')?.getError('required')" >required</p>
+                <p class="alert alert-danger" *ngIf="registerForm.get('email')?.getError('email')" >must be email syntax</p>
+            </div>
+        <input type="number" placeholder="age" class="form-control input-bg text-capitalize"formControlName="age">
+        <div *ngIf="registerForm.get('age')?.touched && registerForm.get('age')?.invalid">
+            <p class="alert alert-danger" *ngIf="registerForm.get('age')?.getError('required')" >required</p>
+            <p class="alert alert-danger" *ngIf="registerForm.get('age')?.getError('min')" >must be minimum value 15</p>
+        </div>
+        <input type="password" placeholder="password" class="form-control input-bg-green text-capitalize" formControlName="password">
+        <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
+            <p class="alert alert-danger" *ngIf="registerForm.get('password')?.getError('required')" >required</p>
+            <p class="alert alert-danger" *ngIf="registerForm.get('password')?.getError('pattern')" >must be start with capital letter</p>
+        </div>
+        <button type="submit"  class="btn  bg text-capitalize text-light border-gray w-100">create account
+          </button>
+        </form>
+        <p class="text-start small ">This site is protected by reCAPTCHA and the Google
+        <span class="text-decoration-underline">Privacy Policy</span> and 
+        <span class="text-decoration-underline">Terms of Service</span> apply.
+        </p>
 <hr>
 <p><span>Already a member?</span><a routerLink="/login">  log in></a></p>
     </div>

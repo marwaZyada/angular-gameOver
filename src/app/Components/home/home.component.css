@@ -16,3 +16,24 @@
 .text-gray{
     color:var(--text-color)
 }
+.bg-secondary{
+    background-color: var(--gray)!important;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+.game{
+    transition:.5s all;
+    -webkit-transition:.5s all;
+    -moz-transition:.5s all;
+    -ms-transition:.5s all;
+    -o-transition:.5s all;
+}
+.game:hover{
+    transform: scaley(1.1);
+    -webkit-transform: scaley(1.1);
+    -moz-transform: scaley(1.1);
+    -ms-transform: scaley(1.1);
+    -o-transform: scaley(1.1);
+}

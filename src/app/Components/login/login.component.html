@@ -6,13 +6,22 @@
     <div class="col-lg-6 text-capitalize text-center p-5 text-color bg">
         <img src="../../../assets/logo.png" width="100" alt="">
         <h2 class="fs-4">log in to game over</h2>
-        
-        <input type="email" placeholder="email " class="form-control input-bg-green text-capitalize">
-        <input type="password" placeholder="password" class="form-control input-bg-green text-capitalize">
-        <input type="submit" value="create account" class="form-control bg text-capitalize text-light border-gray ">
+        <form action="" [formGroup]="loginForm" (ngSubmit)="login(loginForm)">
+        <input type="email" placeholder="email " class="form-control input-bg-green text-capitalize" formControlName="email">
+        <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+          <p class="alert alert-danger" *ngIf="loginForm.get('email')?.getError('required')" >required</p>
+          <p class="alert alert-danger" *ngIf="loginForm.get('email')?.getError('email')" >must be email syntax</p>
+      </div>
+        <input type="password" placeholder="password" class="form-control input-bg-green text-capitalize" formControlName="password">
+        <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+          <p class="alert alert-danger" *ngIf="loginForm.get('password')?.getError('required')" >required</p>
+          <p class="alert alert-danger" *ngIf="loginForm.get('password')?.getError('pattern')" >must start with capital letter </p>
+      </div>
+        <input type="submit" value="login" class="form-control bg text-capitalize text-light border-gray ">
+      </form>
 <hr>
 <span><a data-bs-toggle="modal" data-bs-target="#exampleModal" class="text-blue cursor-pointer">forget password?</a></span>
-<p><span>not a member yet?</span><a routerLink="/register">  create account></a></p>
+<p><span>not a member yet?</span><a routerLink="/login">  create account></a></p>
     </div>
 </div>
 </div>

@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
+import { RegisterComponent } from './Components/register/register.component';
 import { HomeComponent } from './Components/home/home.component';
 import { AllComponent } from './Components/all/all.component';
 import { PlatformsComponent } from './Components/platforms/platforms.component';
@@ -31,6 +31,8 @@ import { FlightComponent } from './Components/flight/flight.component';
 import { BottleRoyaleComponent } from './Components/bottle-royale/bottle-royale.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NotFoundComponent } from './Components/not-found/not-found.component';
+import { DatailsComponent } from './Components/datails/datails.component';
 
 
 @NgModule({
@@ -61,7 +63,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     ActionRpgComponent,
     ActionComponent,
     FlightComponent,
-    BottleRoyaleComponent
+    BottleRoyaleComponent,
+    NotFoundComponent,
+    DatailsComponent
   ],
   imports: [
     BrowserModule,

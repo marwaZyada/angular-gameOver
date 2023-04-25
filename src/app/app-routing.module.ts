@@ -7,7 +7,7 @@ import { AllComponent } from './Components/all/all.component';
 import { PlatformsComponent } from './Components/platforms/platforms.component';
 import { SortbyComponent } from './Components/sortby/sortby.component';
 import { CategoriesComponent } from './Components/categories/categories.component';
-import { RegisterComponent } from './components/register/register.component';
+import { RegisterComponent } from './Components/register/register.component';
 import { PcComponent } from './Components/pc/pc.component';
 import { BrowserComponent } from './Components/browser/browser.component';
 import { ReleaseComponent } from './Components/release/release.component';
@@ -25,35 +25,46 @@ import { ActionRpgComponent } from './Components/action-rpg/action-rpg.component
 import { ActionComponent } from './Components/action/action.component';
 import { BottleRoyaleComponent } from './Components/bottle-royale/bottle-royale.component';
 import { FlightComponent } from './Components/flight/flight.component';
+import { NotFoundComponent } from './Components/not-found/not-found.component';
+import { AuthguardGuard } from './guards/authguard.guard';
+import { DatailsComponent } from './Components/datails/datails.component';
 
 const routes: Routes = [
+  {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
-  {path:'home',component:HomeComponent},
-  {path:'all',component:AllComponent},
-  {path:'platforms',component:PlatformsComponent,children:[
-    {path:'pc',component:PcComponent},
-    {path:'browser',component:BrowserComponent}
-  ]},
-  {path:'sort-by',component:SortbyComponent,children:[
-    {path:'release',component:ReleaseComponent},
-    {path:'popularity',component:PopularityComponent},
-    {path:'alphabetical',component:AlphabeticalComponent},
-    {path:'relevance',component:RelevanceComponent}
-  ]},
-  {path:'categories',component:CategoriesComponent,children:[
-    {path:'racing',component:RacingComponent},
-    {path:'sports',component:SportsComponent},
-    {path:'social',component:SocialComponent},
-    {path:'shooter',component:ShooterComponent},
-    {path:'open-world',component:OpenWorldComponent},
-    {path:'zombie',component:ZombieComponent},
-    {path:'fantasy',component:FantasyComponent},
-    {path:'action-rpg',component:ActionRpgComponent},
-    {path:'action',component:ActionComponent},
-    {path:'flight',component:FlightComponent},
-    {path:'bottle-royale',component:BottleRoyaleComponent}
-  ]}
+  {path:'home',canActivate:[AuthguardGuard],component:HomeComponent},
+  {path:'all',canActivate:[AuthguardGuard],component:AllComponent},
+  {path:'platforms',canActivate:[AuthguardGuard],component:PlatformsComponent
+  ,children:[
+    {path:'pc',canActivate:[AuthguardGuard],component:PcComponent},
+    {path:'browser',canActivate:[AuthguardGuard],component:BrowserComponent} ]
+  },
+  {path:'sort-by/:value',canActivate:[AuthguardGuard],component:SortbyComponent
+  // ,children:[
+  //   {path:'release',canActivate:[AuthguardGuard],component:ReleaseComponent},
+  //   {path:'popularity',canActivate:[AuthguardGuard],component:PopularityComponent},
+  //   {path:'alphabetical',canActivate:[AuthguardGuard],component:AlphabeticalComponent},
+  //   {path:'relevance',canActivate:[AuthguardGuard],component:RelevanceComponent}
+  // ]
+},
+  {path:'categories/:value',canActivate:[AuthguardGuard],component:CategoriesComponent
+  // ,children:[
+  //   {path:'racing',canActivate:[AuthguardGuard],component:RacingComponent},
+  //   {path:'sports',canActivate:[AuthguardGuard],component:SportsComponent},
+  //   {path:'social',canActivate:[AuthguardGuard],component:SocialComponent},
+  //   {path:'shooter',canActivate:[AuthguardGuard],component:ShooterComponent},
+  //   {path:'open-world',canActivate:[AuthguardGuard],component:OpenWorldComponent},
+  //   {path:'zombie',canActivate:[AuthguardGuard],component:ZombieComponent},
+  //   {path:'fantasy',canActivate:[AuthguardGuard],component:FantasyComponent},
+  //   {path:'action-rpg',canActivate:[AuthguardGuard],component:ActionRpgComponent},
+  //   {path:'action',canActivate:[AuthguardGuard],component:ActionComponent},
+  //   {path:'flight',canActivate:[AuthguardGuard],component:FlightComponent},
+  //   {path:'bottle-royale',canActivate:[AuthguardGuard],component:BottleRoyaleComponent}
+  // ]
+},
+  {path:"details/:id",component:DatailsComponent},
+  {path:"**",component:NotFoundComponent}
 ];
 
 @NgModule({

@@ -20,17 +20,20 @@
 .text-gray{
       color: var(--text-color)!important;
 }
+.active{
+    color: white, i !important;
+}
 
 @media screen and (max-width:990px){
-   .navbar{
-    justify-content: start!important;
-    
-   }
-   ul{
-    align-items: start!important;
+
+   .dropdown-menu{
+    width: 100px;
    }
    .social{
-    margin-left: unset!important;
-    
+    align-items: start!important;
    }
+   .out{
+    align-self: flex-start;
+   }
+
 }

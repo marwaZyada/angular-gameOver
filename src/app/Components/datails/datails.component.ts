@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GameserviceService } from 'src/app/sevices/gameservice.service';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-datails',
@@ -22,4 +23,24 @@ this._gameService.getGameDetails(this.id).subscribe(res=>{console.log(res);
 })
   })
 }
+
+customOptions: OwlOptions = {
+  loop: true,
+  autoplay:true,
+  mouseDrag: false,
+  touchDrag: false,
+  pullDrag: false,
+  autoplayTimeout:1000,
+  dots: false,
+  navSpeed: 700,
+  navText: ['', ''],
+  responsive: {
+    0: {
+      items: 1
+    },
+    
+  },
+  
+}
+
 }

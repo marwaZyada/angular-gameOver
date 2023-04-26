@@ -17,6 +17,9 @@
 
         <h2 class="text-secondary mt-3 text-capitalize">minimum system requirements</h2>
 
+
+       
+
         <p class="text-secondary h4">graphics: <span class="h6 text-gray">{{game.minimum_system_requirements?.graphics}}</span></p>
         <p class="text-secondary h4">memory: <span class="h6 text-gray">{{game.minimum_system_requirements?.memory}}</span></p>
         <p class="text-secondary h4">os: <span class="h6 text-gray">{{game.minimum_system_requirements?.os}}</span></p>
@@ -25,11 +28,18 @@
 
 
         <h2 class="text-secondary mt-3 text-capitalize">{{game.title}}  screenshots</h2>
+            
+             <owl-carousel-o [options]="customOptions">
 
-        <div class="owl">
+                <ng-container *ngFor="let slide of game.screenshots">
+                  <ng-template  carouselSlide>
+                    <img [src]="slide.image" alt=" " class="w-100">
+                  </ng-template>
+                </ng-container>
+            
+              </owl-carousel-o> 
+            
 
-
-        </div>
         <h2 class="mt-3 text-capitalize text-secondary">additional information</h2>
         <div class="row g-2">
             <div class="col-lg- col-sm-5">

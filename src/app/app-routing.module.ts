@@ -40,13 +40,13 @@ const routes: Routes = [
     {path:'pc',canActivate:[AuthguardGuard],component:PcComponent},
     {path:'browser',canActivate:[AuthguardGuard],component:BrowserComponent} ]
   },
-  {path:'sort-by/:value',canActivate:[AuthguardGuard],component:SortbyComponent
-  // ,children:[
-  //   {path:'release',canActivate:[AuthguardGuard],component:ReleaseComponent},
-  //   {path:'popularity',canActivate:[AuthguardGuard],component:PopularityComponent},
-  //   {path:'alphabetical',canActivate:[AuthguardGuard],component:AlphabeticalComponent},
-  //   {path:'relevance',canActivate:[AuthguardGuard],component:RelevanceComponent}
-  // ]
+  {path:'sort-by',canActivate:[AuthguardGuard],component:SortbyComponent
+  ,children:[
+    {path:'release_date',canActivate:[AuthguardGuard],component:ReleaseComponent},
+    {path:'popularity',canActivate:[AuthguardGuard],component:PopularityComponent},
+    {path:'alphabetical',canActivate:[AuthguardGuard],component:AlphabeticalComponent},
+    {path:'relevance',canActivate:[AuthguardGuard],component:RelevanceComponent}
+  ]
 },
   {path:'categories/:value',canActivate:[AuthguardGuard],component:CategoriesComponent
   // ,children:[

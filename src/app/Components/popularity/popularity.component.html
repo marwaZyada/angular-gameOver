@@ -1,1 +1,32 @@
-<p class="mt-5">popularity works!</p>
+<div class="container">
+    <div class="row mt-5 g-2">
+        <div class="col-md-3 cursor-pointer game mb-3" *ngFor="let game of games " [routerLink]="['/details',game.id]">
+            <div class="bg-secondary h-100 ">
+            <div>
+                <img [src]="game.thumbnail"class="ratio ratio-4x3 w-100" alt="">
+            </div>
+            <div class=" p-3">
+            <div class="d-flex justify-content-between align-items-center ">
+                <h3 class="h4 text-gray" *ngIf="game.title?.length<10">{{width>1000?game.title:game.title.slice(0,4)}}</h3>
+                <h3 class="h4 text-gray" *ngIf="game.title?.length>10">{{width>1000?game.title.slice(0,10):game.title.slice(0,5)}} ..</h3>
+                <div class="btn btn-primary small p-0 px-2">free</div>
+            </div>
+            <p class="text-secondary">{{width>1000?game.short_description?.slice(0,55):game.short_description?.slice(0,30)}} .....</p>
+            <div class="d-flex justify-content-between align-items-center ">
+                <i class="fa-solid fa-square-plus small text-secondary"></i>
+                <div class="d-flex align-items-center gap-1">
+                <div class="btn btn-secondary p-0 px-1 text-dark h6">{{game.genre}}</div>
+                <i class="fa-brands fa-windows small text-secondary"></i>
+            </div>
+        </div>
+        </div>
+    </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+<a  class="btn btn-outline-secondary text-capitalize cursor-pointer" (click)="moreGames()">more games</a>
+    </div>
+
+</div>
+

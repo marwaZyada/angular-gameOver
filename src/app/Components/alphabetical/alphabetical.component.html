@@ -25,7 +25,7 @@
     </div>
 
     <div class="text-center">
-<a  class="btn btn-outline-secondary text-capitalize cursor-pointer" (click)="moreGames()">more games</a>
+<a  class="btn btn-outline-secondary text-capitalize cursor-pointer" (click)="moreGames()"*ngIf="allGames.length>12&&n<allGames.length">more games</a>
     </div>
 
 </div>

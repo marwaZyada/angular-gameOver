@@ -30,7 +30,7 @@ import { AuthguardGuard } from './guards/authguard.guard';
 import { DatailsComponent } from './Components/datails/datails.component';
 
 const routes: Routes = [
-  {path:'',redirectTo:'home',pathMatch:'full'},
+  {path:'',redirectTo:'login',pathMatch:'full'},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'home',canActivate:[AuthguardGuard],component:HomeComponent},
@@ -48,20 +48,20 @@ const routes: Routes = [
     {path:'relevance',canActivate:[AuthguardGuard],component:RelevanceComponent}
   ]
 },
-  {path:'categories/:value',canActivate:[AuthguardGuard],component:CategoriesComponent
-  // ,children:[
-  //   {path:'racing',canActivate:[AuthguardGuard],component:RacingComponent},
-  //   {path:'sports',canActivate:[AuthguardGuard],component:SportsComponent},
-  //   {path:'social',canActivate:[AuthguardGuard],component:SocialComponent},
-  //   {path:'shooter',canActivate:[AuthguardGuard],component:ShooterComponent},
-  //   {path:'open-world',canActivate:[AuthguardGuard],component:OpenWorldComponent},
-  //   {path:'zombie',canActivate:[AuthguardGuard],component:ZombieComponent},
-  //   {path:'fantasy',canActivate:[AuthguardGuard],component:FantasyComponent},
-  //   {path:'action-rpg',canActivate:[AuthguardGuard],component:ActionRpgComponent},
-  //   {path:'action',canActivate:[AuthguardGuard],component:ActionComponent},
-  //   {path:'flight',canActivate:[AuthguardGuard],component:FlightComponent},
-  //   {path:'bottle-royale',canActivate:[AuthguardGuard],component:BottleRoyaleComponent}
-  // ]
+  {path:'categories',canActivate:[AuthguardGuard],component:CategoriesComponent
+  ,children:[
+    {path:'racing',canActivate:[AuthguardGuard],component:RacingComponent},
+    {path:'sports',canActivate:[AuthguardGuard],component:SportsComponent},
+    {path:'social',canActivate:[AuthguardGuard],component:SocialComponent},
+    {path:'shooter',canActivate:[AuthguardGuard],component:ShooterComponent},
+    {path:'open-world',canActivate:[AuthguardGuard],component:OpenWorldComponent},
+    {path:'zombie',canActivate:[AuthguardGuard],component:ZombieComponent},
+    {path:'fantasy',canActivate:[AuthguardGuard],component:FantasyComponent},
+    {path:'action-rpg',canActivate:[AuthguardGuard],component:ActionRpgComponent},
+    {path:'action',canActivate:[AuthguardGuard],component:ActionComponent},
+    {path:'flight',canActivate:[AuthguardGuard],component:FlightComponent},
+    {path:'bottle-royale',canActivate:[AuthguardGuard],component:BottleRoyaleComponent}
+  ]
 },
   {path:"details/:id",component:DatailsComponent},
   {path:"**",component:NotFoundComponent}

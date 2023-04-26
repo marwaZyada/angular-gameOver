@@ -15,11 +15,11 @@
         <p class="text-secondary">{{game.description}}</p>
 
 
-        <h2 class="text-secondary mt-3 text-capitalize"*ngIf="flag">minimum system requirements</h2>
+        <h2 class="text-secondary mt-3 text-capitalize"*ngIf="flag&&game.minimum_system_requirements">minimum system requirements</h2>
 
 
        
-<div *ngIf="flag">
+<div *ngIf="flag &&game.minimum_system_requirements">
         <p class="text-secondary h4">graphics: <span class="h6 text-gray">{{game.minimum_system_requirements?.graphics}}</span></p>
         <p class="text-secondary h4">memory: <span class="h6 text-gray">{{game.minimum_system_requirements?.memory}}</span></p>
         <p class="text-secondary h4">os: <span class="h6 text-gray">{{game.minimum_system_requirements?.os}}</span></p>
@@ -63,7 +63,7 @@
             </div>
             <div class="col-lg-2 col-sm-5">
                 <h3 class="text-muted text-capitalize h4">platform</h3>
-                <p class="text-gray h6">{{game.platform}}</p>
+                <p class="text-gray h6"><i class="fa-brands fa-windows small"*ngIf="game.platform=='Windows'"></i> <i class="fa-sharp fa-solid fa-window-maximize small"*ngIf="game.platform=='Web Browser'"></i> {{game.platform}}</p>
             </div>
         </div>
     </div>

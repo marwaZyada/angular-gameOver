@@ -25,7 +25,7 @@ this._gameService.getGameDetails(this.id).subscribe(res=>{console.log(res);
   this.flag=true
   this.game=res
 })
-})},3000)
+})},5000)
 }
 
 customOptions: OwlOptions = {

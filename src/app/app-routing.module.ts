@@ -30,7 +30,7 @@ import { AuthguardGuard } from './guards/authguard.guard';
 import { DatailsComponent } from './Components/datails/datails.component';
 
 const routes: Routes = [
-  {path:'',redirectTo:'login',pathMatch:'full'},
+  {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'home',canActivate:[AuthguardGuard],component:HomeComponent},

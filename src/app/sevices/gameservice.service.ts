@@ -32,35 +32,52 @@ this._router.navigate(["/login"])
   }
 
   getAllGames():Observable<any>{
-return  this._httpClient.get('https://free-to-play-games-database.p.rapidapi.com/api/games',{headers:{
-   'X-RapidAPI-Key': 'b52128808dmsh5826403ec30ac21p1b9548jsnfca5769e0b68',
-   'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
-}})
+return  this._httpClient.get('https://free-to-play-games-database.p.rapidapi.com/api/games'
+
+// ,{headers:{
+//    'X-RapidAPI-Key': 'b52128808dmsh5826403ec30ac21p1b9548jsnfca5769e0b68',
+//    'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+// }}
+
+)
  }
   getGameDetails(id:string):Observable<any>{
-return  this._httpClient.get(`https://free-to-play-games-database.p.rapidapi.com/api/game?id=${id}`,{headers:{
-   'X-RapidAPI-Key': 'b52128808dmsh5826403ec30ac21p1b9548jsnfca5769e0b68',
-   'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
-}})
+return  this._httpClient.get(`https://free-to-play-games-database.p.rapidapi.com/api/game?id=${id}`
+
+// ,{headers:{
+//    'X-RapidAPI-Key': 'b52128808dmsh5826403ec30ac21p1b9548jsnfca5769e0b68',
+//    'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+// }}
+
+)
  }
   getGamePlatform(name:string):Observable<any>{
-return  this._httpClient.get(`https://free-to-play-games-database.p.rapidapi.com/api/games?platform=${name}`,{headers:{
-   'X-RapidAPI-Key': 'b52128808dmsh5826403ec30ac21p1b9548jsnfca5769e0b68',
-   'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
-}})
+return  this._httpClient.get(`https://free-to-play-games-database.p.rapidapi.com/api/games?platform=${name}`
+// ,{headers:{
+//    'X-RapidAPI-Key': 'b52128808dmsh5826403ec30ac21p1b9548jsnfca5769e0b68',
+//    'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+// }}
+)
  }
 
   getGameSortBy(name:string):Observable<any>{
-return  this._httpClient.get(`https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=${name}`,{headers:{
-   'X-RapidAPI-Key': 'b52128808dmsh5826403ec30ac21p1b9548jsnfca5769e0b68',
-   'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
-}})
+return  this._httpClient.get(`https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=${name}`
+// ,{headers:{
+//    'X-RapidAPI-Key': 'b52128808dmsh5826403ec30ac21p1b9548jsnfca5769e0b68',
+//    'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+// }}
+
+)
  }
   getGameCategorie(name:string):Observable<any>{
-return  this._httpClient.get(`https://free-to-play-games-database.p.rapidapi.com/api/games?category=${name}`,{headers:{
-   'X-RapidAPI-Key': 'b52128808dmsh5826403ec30ac21p1b9548jsnfca5769e0b68',
-   'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
-}})
+return  this._httpClient.get(`https://free-to-play-games-database.p.rapidapi.com/api/games?category=${name}`
+// ,
+// {headers:{
+//    'X-RapidAPI-Key': 'b52128808dmsh5826403ec30ac21p1b9548jsnfca5769e0b68',
+//    'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+// }}
+
+)
  }
 
  @HostListener ('window:resize',['$event']) onResize(event:any):void{

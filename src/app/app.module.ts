@@ -35,6 +35,9 @@ import { DatailsComponent } from './Components/datails/datails.component';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { LoaderComponent } from './Components/loader/loader.component';
+import { HeaderInterceptor } from './header.interceptor';
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
 
 
 @NgModule({
@@ -67,7 +70,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     FlightComponent,
     BottleRoyaleComponent,
     NotFoundComponent,
-    DatailsComponent
+    DatailsComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +83,11 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     CarouselModule 
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

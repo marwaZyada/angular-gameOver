@@ -1,11 +1,11 @@
-
+<app-loader *ngIf="!flag"></app-loader>
 <div class="container">
 <div class="row mt-5">
     <div class="col-lg-5">
         <div class="image overflow-hidden">
             <img [src]="game.thumbnail" alt="" class="w-100 rounded-3">
         </div>
-        <div class="my-3 px-2 text-center">
+        <div class="my-3 px-2 text-center"*ngIf="flag">
             <button class="btn btn-secondary">free</button>
             <a [href]="game.freetogame_profile_url" class="text-uppercase btn btn-primary w-75 ms-2">play now <i class="fa-solid fa-arrow-right-from-bracket small"></i></a>
         </div>
@@ -15,19 +15,18 @@
         <p class="text-secondary">{{game.description}}</p>
 
 
-        <h2 class="text-secondary mt-3 text-capitalize">minimum system requirements</h2>
+        <h2 class="text-secondary mt-3 text-capitalize"*ngIf="flag">minimum system requirements</h2>
 
 
        
-
+<div *ngIf="flag">
         <p class="text-secondary h4">graphics: <span class="h6 text-gray">{{game.minimum_system_requirements?.graphics}}</span></p>
         <p class="text-secondary h4">memory: <span class="h6 text-gray">{{game.minimum_system_requirements?.memory}}</span></p>
         <p class="text-secondary h4">os: <span class="h6 text-gray">{{game.minimum_system_requirements?.os}}</span></p>
         <p class="text-secondary h4">processor: <span class="h6 text-gray">{{game.minimum_system_requirements?.processor}}</span></p>
         <p class="text-secondary h4">storage: <span class="h6 text-gray">{{game.minimum_system_requirements?.storage}}</span></p>
-
-
-        <h2 class="text-secondary mt-3 text-capitalize">{{game.title}}  screenshots</h2>
+    </div>
+        <h2 class="text-secondary mt-3 text-capitalize"*ngIf="flag">{{game.title}}  screenshots</h2>
             
              <owl-carousel-o [options]="customOptions">
 
@@ -40,8 +39,8 @@
               </owl-carousel-o> 
             
 
-        <h2 class="mt-3 text-capitalize text-secondary">additional information</h2>
-        <div class="row g-2">
+        <h2 class="mt-3 text-capitalize text-secondary"*ngIf="flag">additional information</h2>
+        <div class="row g-2"*ngIf="flag">
             <div class="col-lg-4 col-sm-5">
                 <h3 class="text-muted text-capitalizeb h4">title</h3>
                 <p class="text-gray h6">{{game.title}}</p>

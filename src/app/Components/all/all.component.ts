@@ -7,6 +7,7 @@ import { GameserviceService } from 'src/app/sevices/gameservice.service';
   styleUrls: ['./all.component.css']
 })
 export class AllComponent implements OnInit{
+  
 constructor(private _gameService:GameserviceService){
     this._gameService.width.subscribe(val=>{this.width=val
       console.log(this.width);
@@ -17,7 +18,9 @@ constructor(private _gameService:GameserviceService){
   width!:number
   n:number=12
     ngOnInit(): void {
-      this._gameService.getAllGames().subscribe(res=>{console.log(res)
+      
+      this._gameService.getAllGames().subscribe(res=>{console.log(res);
+        
         this.allGames=res
         this.games=this.allGames.slice(0,this.n)
         console.log(this.games);

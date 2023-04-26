@@ -9,19 +9,23 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./datails.component.css']
 })
 export class DatailsComponent implements OnInit{
+
+  flag:boolean=false
   constructor(private _activatedRoute:ActivatedRoute,private _gameService:GameserviceService){}
 
 id!:string
 
 game:any={}
 ngOnInit(): void {
+  setTimeout(()=>{
   this._activatedRoute.paramMap.subscribe(res=>{
      this.id=res.get("id")||"";
      console.log(this.id);
 this._gameService.getGameDetails(this.id).subscribe(res=>{console.log(res);
+  this.flag=true
   this.game=res
 })
-  })
+})},3000)
 }
 
 customOptions: OwlOptions = {

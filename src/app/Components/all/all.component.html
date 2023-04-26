@@ -1,5 +1,5 @@
 
-<!-- <app-loader class="mt-5"></app-loader> -->
+<app-loader ></app-loader>
 <div class="container">
     <div class="row mt-5 g-2">
         <div class="col-md-3 cursor-pointer game mb-3" *ngFor="let game of games " [routerLink]="['/details',game.id]">
@@ -27,7 +27,7 @@
     </div>
 
     <div class="text-center">
-<a  class="btn btn-outline-secondary text-capitalize cursor-pointer" (click)="moreGames()">more games</a>
+<a  class="btn btn-outline-secondary text-capitalize cursor-pointer" (click)="moreGames()"*ngIf="allGames.length>12&&n<allGames.length">more games</a>
     </div>
 
 </div>

@@ -1,4 +1,7 @@
 import { Component, HostListener } from '@angular/core';
+import { AnimationItem } from 'lottie-web';
+import { AnimationOptions, LottieComponent } from 'ngx-lottie';
+
 
 @Component({
   selector: 'app-root',

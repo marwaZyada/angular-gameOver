@@ -38,7 +38,13 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { LoaderComponent } from './Components/loader/loader.component';
 import { HeaderInterceptor } from './header.interceptor';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
 
+export function playerFactory() {
+  return player;
+  
+}
 
 @NgModule({
   declarations: [
@@ -80,7 +86,8 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
     ReactiveFormsModule,
     RouterModule,
     BrowserAnimationsModule ,
-    CarouselModule 
+    CarouselModule ,
+    LottieModule.forRoot({ player: playerFactory })
 
   ],
   providers: [

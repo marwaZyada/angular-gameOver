@@ -26,7 +26,7 @@
         <p class="text-secondary h4">processor: <span class="h6 text-gray">{{game.minimum_system_requirements?.processor}}</span></p>
         <p class="text-secondary h4">storage: <span class="h6 text-gray">{{game.minimum_system_requirements?.storage}}</span></p>
     </div>
-        <h2 class="text-secondary mt-3 text-capitalize"*ngIf="flag">{{game.title}}  screenshots</h2>
+        <h2 class="text-secondary mt-3 text-capitalize"*ngIf="flag&&game.screenshots.length>0">{{game.title}}  screenshots</h2>
             
              <owl-carousel-o [options]="customOptions">
 
@@ -43,27 +43,27 @@
         <div class="row g-2"*ngIf="flag">
             <div class="col-lg-4 col-sm-5">
                 <h3 class="text-muted text-capitalizeb h4">title</h3>
-                <p class="text-gray h6">{{game.title}}</p>
+                <p class="text-gray small">{{game.title}}</p>
             </div>
-            <div class="col-lg-4 col-sm-5">
+            <div class="col-lg-3 col-sm-5">
                 <h3 class="text-muted text-capitalize h4">developer</h3>
-                <p class="text-gray h6">{{game.developer}}</p>
+                <p class="text-gray small">{{game.developer}}</p>
             </div>
-            <div class="col-lg-2 col-sm-5">
+            <div class="col-lg-3 col-sm-5">
                 <h3 class="text-muted text-capitalize h4">publisher</h3>
-                <p class="text-gray h6">{{game.publisher}}</p>
+                <p class="text-gray small">{{game.publisher}}</p>
             </div>
             <div class="col-lg-4 col-sm-5">
                 <h3 class="text-muted text-capitalize h4">release date</h3>
-                <p class="text-gray h6">{{game.release_date}}</p>
+                <p class="text-gray small">{{game.release_date}}</p>
             </div>
-            <div class="col-lg-4 col-sm-5">
+            <div class="col-lg-3 col-sm-5">
                 <h3 class="text-muted text-capitalize h4">genre</h3>
-                <p class="text-gray h6">{{game.genre}}</p>
+                <p class="text-gray small">{{game.genre}}</p>
             </div>
-            <div class="col-lg-2 col-sm-5">
+            <div class="col-lg-3 col-sm-5">
                 <h3 class="text-muted text-capitalize h4">platform</h3>
-                <p class="text-gray h6"><i class="fa-brands fa-windows small"*ngIf="game.platform=='Windows'"></i> <i class="fa-sharp fa-solid fa-window-maximize small"*ngIf="game.platform=='Web Browser'"></i> {{game.platform}}</p>
+                <p class="text-gray small"><i class="fa-brands fa-windows small"*ngIf="game.platform=='Windows'"></i> <i class="fa-sharp fa-solid fa-window-maximize small"*ngIf="game.platform=='Web Browser'"></i> {{game.platform}}</p>
             </div>
         </div>
     </div>
